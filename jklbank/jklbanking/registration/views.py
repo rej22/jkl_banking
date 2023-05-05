@@ -39,7 +39,6 @@ def detailform(request):
         messages.success(request, 'Appplication accepted')
         return redirect('detailform')
 
-
     return render(request, 'detailform.html')
 
 
