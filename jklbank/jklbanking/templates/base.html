@@ -13,6 +13,13 @@
     <div>
           {% include 'navbar.html' %}
     </div>
+    <div>
+         {% block content %}
+         {% endblock %}
+   </div>
+    <div>
+          {% include 'footer.html' %}
+    </div>
     <script src="{% static 'js/popper.min.js' %}"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
 </body>
