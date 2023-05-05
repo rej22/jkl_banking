@@ -11,7 +11,7 @@ def login(request):
 
         if user is not None:
             auth.login(request, user)
-            return redirect('/')
+            return redirect('about')
         else:
             messages.info(request, 'Enter valid credentials')
             return redirect('login')
@@ -36,7 +36,8 @@ def register(request):
 
 def detailform(request):
     if request.method == 'POST':
-        messages.info(request, 'Appplication accepted')
+        messages.success(request, 'Appplication accepted')
+        return redirect('detailform')
 
 
     return render(request, 'detailform.html')

@@ -82,7 +82,10 @@ body
 .h4_register {
     margin: 5px;
 }
-
+.logout_btn_lettter {
+    color: white;
+    text-decoration: none;
+}
 
 /************
    register
