@@ -32,3 +32,8 @@ def register(request):
             messages.info(request, 'Password not matching')
             return redirect('register')
     return render(request, 'registration.html')
+
+
+def logout(request):
+    auth.logout(request)
+    return redirect('/')
