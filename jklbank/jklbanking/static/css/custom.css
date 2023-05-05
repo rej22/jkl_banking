@@ -3,6 +3,70 @@
    navbar
 ***************/
 
-body {
- background-color: red;
+background-color: #B0C4DE;
+
+/***************
+   home page
+***************/
+
+.body{
+    background-color: #B0C4DE;
+}
+
+/************
+    footer
+************/
+
+.me-4 {
+    text-decoration: none;
+}
+.foot_p-3{
+    background-color: black;
+    height: 30px;
+    padding: 5px;
+}
+footer{
+    background-color: black;
+    margin-top: 10px;
+}
+.me-5 {
+    color: red;
+    font-size: 20px;
+}
+.fab {
+    margin-left: 20px;
+    padding-right: 5px;
+    color: 	red;
+}
+a:hover .fab {
+  color: red;
+}
+.foot_pro_a {
+    text-decoration: none;
+}
+a.foot_pro_a:hover {
+  color: #B0C4DE !important;
+}
+.custom_search_icon {
+    background-color: white;
+    height: 35px;
+    margin-top: 8px;
+}
+.custom_search_ico{
+    color: black;
+}
+.movie_detail_pic {
+    width: 18rem;
+    height: 275px;
+}
+
+.detail_top_container {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.details_icons_div {
+    margin-top: 20px;
+}
+.details_icons_div .fa{
+    margin-right: 20px;
 }
