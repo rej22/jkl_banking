@@ -3,9 +3,44 @@
    navbar
 ***************/
 
+.navbar {
+    background-image: linear-gradient(135deg, #5EFCE8 10%, #736EFE 100%);
+}
+.navbar-brand h2 {
+    color: #FFFFFF;
+}
 .detail_form_div {
     background-image: linear-gradient(135deg, #f5f7fa 10%, #c3cfe2 100%);
 }
+a.nav-link {
+    color: white;
+}
+.nav-item:hover {
+     background-color: 	#B0C4DE;
+     border-radius: 5px;
+     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+.nav-item:hover a {
+     color: black;
+}
+.nav-link {
+    letter-spacing: .1em;
+    font-size: 18px;
+    text-transform: uppercase;
+    padding-left: 20px;
+}
+.navbarDropdown {
+    letter-spacing: .1em;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+a.dropdown-item {
+   background-color: #B0C4DE;
+   letter-spacing: .2em;
+   font-size: 16px;
+   text-transform: uppercase;
+}
+
 
 
 
@@ -13,6 +48,10 @@
    home page
 ***************/
 
+.login_btn_lettter {
+    color: white;
+    text-decoration: none;
+}
 body
 {
 	font-family: 'Open Sans', sans-serif;
@@ -21,6 +60,38 @@ body
 	background-image: linear-gradient(135deg, #f5f7fa 10%, #c3cfe2 100%);
 	color: #a5a5a5;
 }
+.banking_home_img {
+   height: 300px;
+   width: 600px;
+}
+
+
+/************
+    login
+************/
+
+.form-login {
+    padding: 5px;
+}
+.form-login {
+    margin: 5px;
+}
+.update_card {
+    margin: 20px;
+}
+.h4_register {
+    margin: 5px;
+}
+
+
+/************
+   register
+************/
+
+.form01 {
+    margin: 5px;
+}
+
 /************
     footer
 ************/

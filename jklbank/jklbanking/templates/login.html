@@ -9,16 +9,27 @@
 {% endblock %}
 
 {% block content %}
-      <div class="login-div">
-            <h1><i>login</i></h1>
+    <div class="container update_container text-center text-justify">
+    <div class="row mx-auto">
+      <div class="col-12 col-md-12 mb-4 text-center text-justify">
+        <div class="card update_card text-center text-justify">
+          <div class="card-title update_card-title">
+            <h5>JKL Banking</h5>
+              <h1><i>login</i></h1>
+          </div>
+            <div class="login-div">
               <form action="login" method="post">
                   {% csrf_token %}
                   <input class="form-login" type="text" name="username" placeholder="Enter your Username">
                   <input class="form-login" type="password" name="password" placeholder="Enter your Password"><br>
                   <input class="submit-login" type="submit">
               </form>
-            <h4>Don't have an account?<a href="{% url 'register' %}"><em>Register</em></a></h4>
+              <h4 class="h4_register">Don't have an account?<a href="{% url 'register' %}"><em>Register</em></a></h4>
+           </div>
+        </div>
       </div>
+    </div>
+    </div>
           {% for msg in messages %}
              <h3><i>{{msg}}</i></h3>
           {% endfor %}

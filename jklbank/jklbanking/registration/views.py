@@ -34,6 +34,14 @@ def register(request):
     return render(request, 'registration.html')
 
 
+def detailform(request):
+    if request.method == 'POST':
+        messages.info(request, 'Appplication accepted')
+
+
+    return render(request, 'detailform.html')
+
+
 def logout(request):
     auth.logout(request)
     return redirect('/')
