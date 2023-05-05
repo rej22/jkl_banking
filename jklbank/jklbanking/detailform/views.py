@@ -1,3 +1,5 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def detailform(request):
+    return render(request, 'detailform.html')
