@@ -8,7 +8,18 @@
 {% endblock %}
 
 {% block content %}
-   <div class="register-form">
-       <h2>Registration</h2>
+   <div class="submit-form01">
+       <h1><i>Registration</i></h1>
+       <form action="register" method="post">
+           {% csrf_token %}
+           <input class="form01" type="text" name="username" placeholder="Enter your UserName"><br>
+           <input class="form01" type="password" name="password" placeholder="Enter a password"><br>
+           <input class="form01" type="password" name="confirm_pswd" placeholder="Enter the password again"><br>
+           <input type="submit">
+       </form>
    </div>
+
+           {% for msg in messages %}
+           <h3><i>{{msg}}</i></h3>
+           {% endfor %}
 {% endblock %}

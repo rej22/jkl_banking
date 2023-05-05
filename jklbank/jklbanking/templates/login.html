@@ -16,7 +16,7 @@
                   <input class="form-login" type="password" name="password" placeholder="Enter your Password"><br>
                   <input class="submit-login" type="submit">
               </form>
-            <h4>Don't have an account?<a href=""><em>Register</em></a></h4>
+            <h4>Don't have an account?<a href="{% url 'registration:register' %}"><em>Register</em></a></h4>
       </div>
           {% for msg in messages %}
              <h3><i>{{msg}}</i></h3>
