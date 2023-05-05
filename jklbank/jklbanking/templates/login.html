@@ -1,10 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block metadescription %}
+      JKL login
+{% endblock %}
 
-</body>
-</html>
+{% block title %}
+     login
+{% endblock %}
+
+{% block content %}
+      <div class="login-div">
+            <h1><i>login</i></h1>
+              <form action="login" method="post">
+                  {% csrf_token %}
+                  <input class="form-login" type="text" name="username" placeholder="Enter your Username">
+                  <input class="form-login" type="password" name="password" placeholder="Enter your Password"><br>
+                  <input class="submit-login" type="submit">
+              </form>
+            <h4>Don't have an account?<a href=""><em>Register</em></a></h4>
+      </div>
+          {% for msg in messages %}
+             <h3><i>{{msg}}</i></h3>
+          {% endfor %}
+
+{% endblock %}
