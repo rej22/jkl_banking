@@ -62,6 +62,7 @@
      {% if messages %}
         {% for msg in messages %}
              <h3><i>{{msg}}</i></h3>
+           <button class="btn-add btn-primary btn_home_login text-justify text-center"><a class="login_btn_lettter" href="{% url 'index' %}">back to home</a></button>
         {% endfor %}
      {% endif %}
       <input type="submit" value="Submit">
