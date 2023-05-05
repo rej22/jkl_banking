@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block metadescription %}
       JKL registration form
 {% endblock %}
@@ -6,8 +7,12 @@
 {% block title %}
      JKL registration form
 {% endblock %}
+
+{% block content %}
+<div class="detail_form_div">
     <h1>Sample Form</h1>
-    <form>
+    <form method="post" action="detailform">
+        {% csrf_token %}
       <label for="name">Name:</label>
       <input type="text" id="name" name="name"><br><br>
 
@@ -33,7 +38,30 @@
       <label for="address">Address:</label>
       <textarea id="address" name="address"></textarea><br><br>
 
+
+      <label for="account_type">Account type:</label>
+      <select id="account_type" name="account_type">
+         <option value="">--Please choose an option--</option>
+         <option value="Savings account">Savings account</option>
+         <option value="Current account">Current account</option>
+         <option value="NRI Accounts">NRI Accounts</option>
+        <option value="Fixed Deposit Account">Fixed Deposit Account</option>
+      </select><br><br>
+
+
+      <label for="checkbox-group">Material provide:</label>
+      <div id="checkbox-group">
+        <input type="checkbox" id="Checkbook" name="material" value="Checkbook">
+        <label for="Checkbook">Checkbook</label><br>
+        <input type="checkbox" id="Credit card" name="material" value="Credit card">
+        <label for="Credit card">Credit card</label><br>
+        <input type="checkbox" id="Debit card" name="material" value="Debit card">
+        <label for="Debit card">Debit card</label><br>
+      </div>
+
+
       <input type="submit" value="Submit">
     </form>
-
+      <button class="btn-add btn-primary btn_home_logout"><a class="logout_btn_lettter" href="{% url 'logout' %}">logout</a></button>
+</div>
 {% endblock %}

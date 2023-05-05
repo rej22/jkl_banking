@@ -15,7 +15,7 @@ def login(request):
         else:
             messages.info(request, 'Enter valid credentials')
             return redirect('login')
-    return render(request, 'detail.html')
+    return render(request, 'login.html')
 
 
 def register(request):

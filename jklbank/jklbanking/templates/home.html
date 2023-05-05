@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block metadescription %}
       JKL home
 {% endblock %}
@@ -11,5 +12,6 @@
    <body>
       <h3>Welcome to JKL banking</h3>
       <button class="btn-add btn-primary btn_home_login"><a class="login_btn_lettter" href="{% url 'login' %}">login</a></button>
+      <button class="btn-add btn-primary btn_detail_form"><a class="detail_form_btn_lettter" href="{% url 'detailform' %}">Account opening form</a></button>
    </body>
 {% endblock %}
