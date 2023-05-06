@@ -39,43 +39,20 @@
          <label for="address">Address:</label>
          <textarea id="address" name="address"></textarea><br><br>
 
-         <label for="district">Select a District:</label>
-         <select id="district" name="district">
-           <option value="">--Please select--</option>
-           <option value="Thiruvanthapuram">Thiruvanthapuram</option>
-           <option value="Kollam">Kollam</option>
-           <option value="Pathanmthitta">Pathanmthitta</option>
-           <option value="kottayam">Kottayam</option>
-           <option value="Alappuzha">Alappuzha</option>
-         </select><br><br>
+<label for="district">Select a District:</label>
+<select id="district" name="district">
+  <option value="">--Please select--</option>
+  <option value="Thiruvanthapuram">Thiruvanthapuram</option>
+  <option value="Kollam">Kollam</option>
+  <option value="Pathanmthitta">Pathanmthitta</option>
+  <option value="kottayam">Kottayam</option>
+  <option value="Alappuzha">Alappuzha</option>
+</select><br><br>
 
-         <label for="branch">Select a Branch:</label>
-         <select id="branch" name="branch">
-           <option value="">--Please select a district first--</option>
-           <optgroup label="Thiruvanthapuram">
-             <option value="Chirayinkeezhu">Chirayinkeezhu</option>
-             <option value="Nedumangad">Nedumangad</option>
-             <option value="Neyyattinkara">Neyyattinkara</option>
-           </optgroup>
-           <optgroup label="Kollam">
-             <option value="Shakthikulangara">Shakthikulangara</option>
-             <option value="Thrikkadavoor">Thrikkadavoor</option>
-             <option value="Mandrothuruth">Mandrothuruth</option>
-           </optgroup>
-           <optgroup label="Pathanmthitta">
-             <option value="Thiruvalla ">Thiruvalla</option>
-             <option value="Ranni">Ranni</option>
-             <option value="Adoor">Adoor</option>
-           </optgroup>
-           <optgroup label="kottayam">
-             <option value="Changanacherry">Changanacherry</option>
-             <option value="Kanjirapally">Kanjirapally </option>
-           </optgroup>
-           <optgroup label="Alappuzha">
-             <option value="Cherthala">Cherthala</option>
-             <option value="Chengannur">Chengannur</option>
-           </optgroup>
-         </select><br><br>
+<label for="branch">Select a Branch:</label>
+<select id="branch" name="branch">
+  <option value="">--Please select a district first--</option>
+</select><br><br>
 
          <label for="account_type">Account type:</label>
          <select id="account_type" name="account_type">
@@ -107,5 +84,37 @@
       <button class="btn-add btn-primary btn_home_logout"><a class="logout_btn_lettter" href="{% url 'logout' %}">logout</a></button>
   </div>
 </div>
+<script>
+  const districtDropdown = document.getElementById('district');
+  const branchDropdown = document.getElementById('branch');
+
+  // Define the options for each district
+  const options = {
+    Thiruvanthapuram: ['Chirayinkeezhu', 'Nedumangad', 'Neyyattinkara'],
+    Kollam: ['Shakthikulangara', 'Thrikkadavoor', 'Mandrothuruth'],
+    Pathanmthitta: ['Thiruvalla', 'Ranni', 'Adoor'],
+    kottayam: ['Changanacherry', 'Kanjirapally'],
+    Alappuzha: ['Cherthala', 'Chengannur'],
+  };
+
+  // Update the branch dropdown when the district dropdown changes
+  districtDropdown.addEventListener('change', () => {
+    const district = districtDropdown.value;
+    const branchOptions = options[district] || [];
+    branchDropdown.innerHTML = '';
+
+    if (branchOptions.length) {
+      branchDropdown.disabled = false;
+      branchDropdown.options[0] = new Option('--Please select--', '');
+      branchOptions.forEach(option => {
+        branchDropdown.options[branchDropdown.options.length] = new Option(option, option);
+      });
+    } else {
+      branchDropdown.disabled = true;
+      branchDropdown.options[0] = new Option('--No branches--', '');
+    }
+  });
+</script>
 {% endblock %}
+
 
