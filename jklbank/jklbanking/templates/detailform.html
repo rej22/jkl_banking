@@ -9,62 +9,92 @@
 {% endblock %}
 
 {% block content %}
-<div class="detail_form_div">
-    <h1>Detail Form</h1>
-    <form method="post" action="detailform">
-        {% csrf_token %}
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name"><br><br>
+<div class="container text-center text-justify">
+  <div class="detail_form_div">
+     <h1>Detail Form</h1>
+     <form method="post" action="detailform">
+       {% csrf_token %}
+         <label for="name">Name:</label>
+         <input type="text" id="name" name="name"><br><br>
 
-      <label for="age">Age:</label>
-      <input type="number" id="age" name="age"><br><br>
+         <label for="age">Age:</label>
+         <input type="number" id="age" name="age"><br><br>
 
-      <label for="dob">Date of Birth:</label>
-      <input type="date" id="dob" name="dob"><br><br>
+         <label for="dob">Date of Birth:</label>
+         <input type="date" id="dob" name="dob"><br><br>
 
-      <label for="gender">Gender:</label>
-      <select id="gender" name="gender">
-        <option value="male">Male</option>
-        <option value="female">Female</option>
-        <option value="other">Other</option>
-      </select><br><br>
+         <label for="gender">Gender:</label>
+         <select id="gender" name="gender">
+           <option value="male">Male</option>
+           <option value="female">Female</option>
+           <option value="other">Other</option>
+         </select><br><br>
 
-      <label for="phone">Phone Number:</label>
-      <input type="tel" id="phone" name="phone"><br><br>
+         <label for="phone">Phone Number:</label>
+         <input type="tel" id="phone" name="phone"><br><br>
 
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email"><br><br>
+         <label for="email">Email:</label>
+         <input type="email" id="email" name="email"><br><br>
 
-      <label for="address">Address:</label>
-      <textarea id="address" name="address"></textarea><br><br>
+         <label for="address">Address:</label>
+         <textarea id="address" name="address"></textarea><br><br>
 
+         <label for="district">Select a District:</label>
+         <select id="district" name="district">
+           <option value="">--Please select--</option>
+           <option value="Thiruvanthapuram">Thiruvanthapuram</option>
+           <option value="Kollam">Kollam</option>
+           <option value="Pathanmthitta">Pathanmthitta</option>
+           <option value="kottayam">Kottayam</option>
+           <option value="Alappuzha">Alappuzha</option>
+         </select><br><br>
 
-      <label for="branch">Branch:</label>
-      <select id="branch" name="branch">
-        <option value="district">--Please select a district first--</option>
-      </select><br><br>
+         <label for="branch">Select a Branch:</label>
+         <select id="branch" name="branch">
+           <option value="">--Please select a district first--</option>
+           <optgroup label="Thiruvanthapuram">
+             <option value="Chirayinkeezhu">Chirayinkeezhu</option>
+             <option value="Nedumangad">Nedumangad</option>
+             <option value="Neyyattinkara">Neyyattinkara</option>
+           </optgroup>
+           <optgroup label="Kollam">
+             <option value="Shakthikulangara">Shakthikulangara</option>
+             <option value="Thrikkadavoor">Thrikkadavoor</option>
+             <option value="Mandrothuruth">Mandrothuruth</option>
+           </optgroup>
+           <optgroup label="Pathanmthitta">
+             <option value="Thiruvalla ">Thiruvalla</option>
+             <option value="Ranni">Ranni</option>
+             <option value="Adoor">Adoor</option>
+           </optgroup>
+           <optgroup label="kottayam">
+             <option value="Changanacherry">Changanacherry</option>
+             <option value="Kanjirapally">Kanjirapally </option>
+           </optgroup>
+           <optgroup label="Alappuzha">
+             <option value="Cherthala">Cherthala</option>
+             <option value="Chengannur">Chengannur</option>
+           </optgroup>
+         </select><br><br>
 
+         <label for="account_type">Account type:</label>
+         <select id="account_type" name="account_type">
+           <option value="">--Please choose an option--</option>
+           <option value="Savings account">Savings account</option>
+           <option value="Current account">Current account</option>
+           <option value="NRI Accounts">NRI Accounts</option>
+           <option value="Fixed Deposit Account">Fixed Deposit Account</option>
+         </select><br><br>
 
-      <label for="account_type">Account type:</label>
-      <select id="account_type" name="account_type">
-         <option value="">--Please choose an option--</option>
-         <option value="Savings account">Savings account</option>
-         <option value="Current account">Current account</option>
-         <option value="NRI Accounts">NRI Accounts</option>
-        <option value="Fixed Deposit Account">Fixed Deposit Account</option>
-      </select><br><br>
-
-
-      <label for="checkbox-group">Material provide:</label>
-      <div id="checkbox-group">
-        <input type="checkbox" id="Checkbook" name="material" value="Checkbook">
-        <label for="Checkbook">Checkbook</label><br>
-        <input type="checkbox" id="Credit card" name="material" value="Credit card">
-        <label for="Credit card">Credit card</label><br>
-        <input type="checkbox" id="Debit card" name="material" value="Debit card">
-        <label for="Debit card">Debit card</label><br>
-      </div>
-
+         <label for="checkbox-group">Material provide:</label>
+         <div id="checkbox-group">
+           <input type="checkbox" id="Checkbook" name="material" value="Checkbook">
+           <label for="Checkbook">Checkbook</label><br>
+           <input type="checkbox" id="Credit card" name="material" value="Credit card">
+           <label for="Credit card">Credit card</label><br>
+           <input type="checkbox" id="Debit card" name="material" value="Debit card">
+           <label for="Debit card">Debit card</label><br>
+         </div>
 
      {% if messages %}
         {% for msg in messages %}
@@ -75,6 +105,7 @@
       <input class="detail_submit" type="submit" value="Submit">
     </form>
       <button class="btn-add btn-primary btn_home_logout"><a class="logout_btn_lettter" href="{% url 'logout' %}">logout</a></button>
+  </div>
 </div>
 {% endblock %}
 
