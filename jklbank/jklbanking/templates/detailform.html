@@ -88,7 +88,6 @@
   const districtDropdown = document.getElementById('district');
   const branchDropdown = document.getElementById('branch');
 
-  // Define the options for each district
   const options = {
     Thiruvanthapuram: ['Chirayinkeezhu', 'Nedumangad', 'Neyyattinkara'],
     Kollam: ['Shakthikulangara', 'Thrikkadavoor', 'Mandrothuruth'],
@@ -97,7 +96,6 @@
     Alappuzha: ['Cherthala', 'Chengannur'],
   };
 
-  // Update the branch dropdown when the district dropdown changes
   districtDropdown.addEventListener('change', () => {
     const district = districtDropdown.value;
     const branchOptions = options[district] || [];
