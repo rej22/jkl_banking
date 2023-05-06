@@ -85,6 +85,13 @@ body
 .logout_btn_lettter {
     color: white;
     text-decoration: none;
+    margin: 5px;
+}
+.btn_home_logout {
+    margin: 5px;
+}
+.detail_submit {
+   margin: 5px;
 }
 
 /************
