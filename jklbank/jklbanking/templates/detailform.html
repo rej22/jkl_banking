@@ -9,80 +9,94 @@
 {% endblock %}
 
 {% block content %}
-<div class="container text-center text-justify">
-  <div class="detail_form_div">
-     <h1>Detail Form</h1>
-     <form method="post" action="detailform">
-       {% csrf_token %}
-         <label for="name">Name:</label>
-         <input type="text" id="name" name="name"><br><br>
+ {% if messages %}
+    <div class="col-12 col-md-6 mb-4">
+        <div class="card update_card text-center text-justify">
+          <div class="card-title update_card-title">
+                {% for msg in messages %}
+                  <h3><i>{{msg}}</i></h3>
+                  <button class="btn-add btn-primary btn_home_login text-justify text-center"><a class="login_btn_lettter" href="{% url 'index' %}">back to home</a></button>
+                {% endfor %}
+          </div>
+        </div>
+    </div>
+ {% endif %}
 
-         <label for="age">Age:</label>
-         <input type="number" id="age" name="age"><br><br>
+<div class="container">
+ <div class="col-12 col-sm-12 col-md-12 col-lg-6">
+   <div class="card update_card text-center text-justify">
+     <div class="card-title update_card-title">
+       <form method="post" action="detailform">
+         {% csrf_token %}
 
-         <label for="dob">Date of Birth:</label>
-         <input type="date" id="dob" name="dob"><br><br>
+            <h1>Detail Form</h1>
 
-         <label for="gender">Gender:</label>
-         <select id="gender" name="gender">
-           <option value="male">Male</option>
-           <option value="female">Female</option>
-           <option value="other">Other</option>
-         </select><br><br>
+          <label class="detail_font text-white" for="name">Name:</label>
+          <input type="text" id="name" name="name" required><br><br>
 
-         <label for="phone">Phone Number:</label>
-         <input type="tel" id="phone" name="phone"><br><br>
+          <label class="detail_font text-white" for="age">Age:</label>
+          <input type="number" id="age" name="age" required><br><br>
 
-         <label for="email">Email:</label>
-         <input type="email" id="email" name="email"><br><br>
+          <label class="detail_font text-white" for="dob">Date of Birth:</label>
+          <input type="date" id="dob" name="dob" required><br><br>
 
-         <label for="address">Address:</label>
-         <textarea id="address" name="address"></textarea><br><br>
+          <label class="detail_font text-white" for="gender">Gender:</label>
+          <select id="gender" name="gender" required>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+          </select><br><br>
 
-<label for="district">Select a District:</label>
-<select id="district" name="district">
-  <option value="">--Please select--</option>
-  <option value="Thiruvanthapuram">Thiruvanthapuram</option>
-  <option value="Kollam">Kollam</option>
-  <option value="Pathanmthitta">Pathanmthitta</option>
-  <option value="kottayam">Kottayam</option>
-  <option value="Alappuzha">Alappuzha</option>
-</select><br><br>
+          <label class="detail_font text-white" for="phone">Phone Number:</label>
+          <input type="tel" id="phone" name="phone" required><br><br>
 
-<label for="branch">Select a Branch:</label>
-<select id="branch" name="branch">
-  <option value="">--Please select a district first--</option>
-</select><br><br>
+          <label class="detail_font text-white" for="email">Email:</label>
+          <input type="email" id="email" name="email" required><br><br>
 
-         <label for="account_type">Account type:</label>
-         <select id="account_type" name="account_type">
-           <option value="">--Please choose an option--</option>
-           <option value="Savings account">Savings account</option>
-           <option value="Current account">Current account</option>
-           <option value="NRI Accounts">NRI Accounts</option>
-           <option value="Fixed Deposit Account">Fixed Deposit Account</option>
-         </select><br><br>
+          <label class="detail_font text-white" for="address">Address:</label>
+          <textarea id="address" name="address" required></textarea><br><br>
 
-         <label for="checkbox-group">Material provide:</label>
-         <div id="checkbox-group">
-           <input type="checkbox" id="Checkbook" name="material" value="Checkbook">
-           <label for="Checkbook">Checkbook</label><br>
-           <input type="checkbox" id="Credit card" name="material" value="Credit card">
-           <label for="Credit card">Credit card</label><br>
-           <input type="checkbox" id="Debit card" name="material" value="Debit card">
-           <label for="Debit card">Debit card</label><br>
-         </div>
 
-     {% if messages %}
-        {% for msg in messages %}
-             <h3><i>{{msg}}</i></h3>
-           <button class="btn-add btn-primary btn_home_login text-justify text-center"><a class="login_btn_lettter" href="{% url 'index' %}">back to home</a></button>
-        {% endfor %}
-     {% endif %}
-      <input class="detail_submit" type="submit" value="Submit">
-    </form>
-      <button class="btn-add btn-primary btn_home_logout"><a class="logout_btn_lettter" href="{% url 'logout' %}">logout</a></button>
-  </div>
+          <label class="detail_font text-white" for="district">Select a District:</label>
+          <select id="district" name="district" required>
+            <option value="">--Please select--</option>
+            <option value="Thiruvanthapuram">Thiruvanthapuram</option>
+            <option value="Kollam">Kollam</option>
+            <option value="Pathanmthitta">Pathanmthitta</option>
+            <option value="kottayam">Kottayam</option>
+            <option value="Alappuzha">Alappuzha</option>
+          </select><br><br>
+
+          <label class="detail_font text-white" for="branch">Select a Branch:</label>
+          <select id="branch" name="branch" required>
+            <option value="">--Please select a district first--</option>
+          </select><br><br>
+
+          <label class="detail_font text-white" for="account_type">Account type:</label>
+          <select id="account_type" name="account_type" required>
+            <option value="">--Please choose an option--</option>
+            <option value="Savings account">Savings account</option>
+            <option value="Current account">Current account</option>
+            <option value="NRI Accounts">NRI Accounts</option>
+            <option value="Fixed Deposit Account">Fixed Deposit Account</option>
+          </select><br><br>
+
+          <label class="detail_font text-white" for="checkbox-group">Material provide:</label>
+          <div id="checkbox-group">
+            <input type="checkbox" id="Checkbook" name="material" value="Checkbook">
+            <label for="Checkbook">Checkbook</label><br>
+            <input type="checkbox" id="Credit card" name="material" value="Credit card">
+            <label for="Credit card">Credit card</label><br>
+            <input type="checkbox" id="Debit card" name="material" value="Debit card">
+            <label for="Debit card">Debit card</label><br>
+          </div>
+
+           <input class="detail_submit" type="submit" value="Submit">
+       </form>
+        <button class="btn-add btn-primary btn_home_logout"><a class="logout_btn_lettter" href="{% url 'logout' %}">logout</a></button>
+     </div>
+   </div>
+ </div>
 </div>
 <script>
   const districtDropdown = document.getElementById('district');
