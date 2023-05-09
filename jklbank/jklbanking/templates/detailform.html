@@ -34,18 +34,22 @@
           <label class="detail_font text-white" for="name">Name:</label>
           <input type="text" id="name" name="name" required><br><br>
 
-          <label class="detail_font text-white" for="age">Age:</label>
-          <input type="number" id="age" name="age" required><br><br>
-
           <label class="detail_font text-white" for="dob">Date of Birth:</label>
           <input type="date" id="dob" name="dob" required><br><br>
 
-          <label class="detail_font text-white" for="gender">Gender:</label>
-          <select id="gender" name="gender" required>
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-            <option value="other">Other</option>
-          </select><br><br>
+          <label class="detail_font text-white" for="age">Age:</label>
+          <input type="number" id="age" name="age" required><br><br>
+
+          <label class="detail_font text-white">Gender:</label>
+          <input type="radio" id="male" name="gender" value="male" required>
+          <label for="male">Male</label>
+
+          <input type="radio" id="female" name="gender" value="female">
+          <label for="female">Female</label>
+
+          <input type="radio" id="other" name="gender" value="other">
+          <label for="other">Other</label><br><br>
+
 
           <label class="detail_font text-white" for="phone">Phone Number:</label>
           <input type="tel" id="phone" name="phone" required><br><br>
@@ -125,6 +129,19 @@
       branchDropdown.disabled = true;
       branchDropdown.options[0] = new Option('--No branches--', '');
     }
+  });
+
+  const dobInput = document.getElementById('dob');
+  const ageInput = document.getElementById('age');
+
+
+  dobInput.addEventListener('change', function() {
+
+    const dob = new Date(dobInput.value);
+    const today = new Date();
+    const age = today.getFullYear() - dob.getFullYear();
+
+    ageInput.value = age;
   });
 </script>
 {% endblock %}
